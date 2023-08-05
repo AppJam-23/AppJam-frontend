@@ -5,13 +5,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
-export default function Home() {
+export default function Dashboard() {
     const [SrData, setSrData] = useState([]);
 
     useEffect(()=>{
         axios({
             method: 'GET',
-            url: process.env.NEXT_PUBLIC_BASEURL+'suspected'
+            url: process.env.NEXT_PUBLIC_BASEURL
         })
         .then((res)=>{
             setSrData(res.data)
@@ -25,7 +25,7 @@ export default function Home() {
                     탬버린
                 </NameContainer>
                 <SusList data={SrData}/>
-                <TotalContainer num={800}/>
+                <TotalContainer num={SrData.length}/>
             </Major>
             <Navigation/>
         </>
