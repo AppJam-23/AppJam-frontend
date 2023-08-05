@@ -5,15 +5,19 @@ import { useRouter } from "next/router"
 export default function Navigation(){
     const router = useRouter();
 
+    function moveDir(dir){
+        router.push(dir)
+    }
+
     return(
         <MainContainer>
-            <NavButton>
+            <NavButton onClick={()=> moveDir('/')}>
                 <Home selected={router.pathname === '/'}/>
             </NavButton>
-            <NavButton>
+            <NavButton onClick={()=> moveDir('/dir')}>
                 <People selected={router.pathname === '/people'}/>
             </NavButton>
-            <NavButton>
+            <NavButton onClick={()=> moveDir('/location')}>
                 <Location selected={router.pathname === '/locaion'}/>
             </NavButton>
         </MainContainer>
