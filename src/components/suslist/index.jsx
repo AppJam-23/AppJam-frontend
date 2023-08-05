@@ -7,7 +7,7 @@ export default function SusList(){
     const router = useRouter()
 
     return(
-        <>
+        <div>
             <SusHeader>
                 <div>
                     <img src="/seirn.png"/>
@@ -29,7 +29,7 @@ export default function SusList(){
                 <PersonStat name='김성명' temp={36.9}/>
                 <PersonStat name='김성명' temp={36.9}/>
             </Box>
-        </>
+        </div>
     )
 }
 
