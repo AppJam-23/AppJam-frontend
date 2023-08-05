@@ -2,6 +2,7 @@ import TotalContainer from "@/components/TotalContainer";
 import Navigation from "@/components/nav";
 import SusList from "@/components/suslist";
 import SusLis2t from "@/components/suslist/index copy";
+import { ButtonLW } from "@/styles/Button";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -11,6 +12,10 @@ export default function Dashboard() {
     const [SrData, setSrData] = useState([]);
     const [name,setName] = useState('이것은 이벤트 이름의 예입니다.');
     const router = useRouter();
+    const [cms, setcms] = useState(false);
+    function rtcms(){
+        setcms(!cms);
+    }
 
     useEffect(()=>{
         axios({
@@ -52,11 +57,13 @@ export default function Dashboard() {
         return (
             <>
                 <Major>
+                    {cms && <COMO data={router.query.id} rt={rtcms}/>}
                     <NameContainer>
                         {name}
                     </NameContainer>
                     <SusList data={SrData}/>
                     <TotalContainer num={SrData.length}/>
+                    <ButtonLW onClick={rtcms}>코드 보기</ButtonLW>
                 </Major>
                 <Navigation/>
             </>
@@ -77,4 +84,50 @@ const NameContainer = styled.div`
     width: fit-content;
     border-radius:1293481029px;
     color: #fff;
+`
+
+function COMO({data, rt}){
+    return(
+        <Blbg>
+            <MoCo>
+                이벤트 참가 코드
+                <Code>
+                    {data}
+                </Code>
+                <ButtonLW onClick={rt}>닫기</ButtonLW>
+            </MoCo>
+        </Blbg>
+    )
+}
+const Blbg = styled.div`
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000ad;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8888;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+`
+
+const MoCo = styled.div`
+    background-color: white;
+    border-radius: 16px;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 24px;
+`
+
+const Code = styled.p`
+    font-size: 44px;
 `
