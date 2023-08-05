@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { styled } from "styled-components"
 import PersonStat from "../personStat"
 
-export default function SusList(){
+export default function SusList({data}){
     const router = useRouter()
 
     return(
@@ -18,16 +18,9 @@ export default function SusList(){
                 <ButtonUB onClick={()=> router.push('/people')}>전체 보기</ButtonUB>
             </SusHeader>
             <Box>
-                <PersonStat name='김성명' temp={36.9}/>
-                <PersonStat name='김성명' temp={36.9}/>
-                <PersonStat name='김성명' temp={36.9}/>
-                <PersonStat name='김성명' temp={400}/>
-                <PersonStat name='김성명' temp={36.9}/>
-                <PersonStat name='김성명' temp={36.9}/>
-                <PersonStat name='김성명' temp={36.9}/>
-                <PersonStat name='김성명' temp={37.9}/>
-                <PersonStat name='김성명' temp={36.9}/>
-                <PersonStat name='김성명' temp={36.9}/>
+                {data.map((d)=>{
+                    return <PersonStat name={d.Name} temp={d.Temperature} key={d.id}/>
+                })}
             </Box>
         </div>
     )
