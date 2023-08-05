@@ -20,13 +20,16 @@ export default function Dashboard() {
         })
         axios({
             method:'POST',
-            url: process.env.NEXT_PUBLIC_BASEURL+'/event/login',
+            url: process.env.NEXT_PUBLIC_BASEURL+'event/login',
             data:{
                 code: router.query.id
             }
         })
         .then((res)=>{
             console.log(res)
+        })
+        .catch((error)=>{
+            console.error(error.response)
         })
     },[])
 
