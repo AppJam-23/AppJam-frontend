@@ -5,17 +5,25 @@ import { styled } from "styled-components";
 
 export default function Home() {
     return (
-        <div>
-            <NameContainer>
-                탬버린
-            </NameContainer>
-            <SusList/>
+        <>
+            <Major>
+                <NameContainer>
+                    탬버린
+                </NameContainer>
+                <SusList/>
+                <TotalContainer num={800}/>
+            </Major>
             <Navigation/>
-            <TotalContainer num={800}/>
-        </div>
+        </>
     )
 }
 
+const Major = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+`
 const NameContainer = styled.div`
     padding: 10px 40px;
     background-color: #FF7372;
