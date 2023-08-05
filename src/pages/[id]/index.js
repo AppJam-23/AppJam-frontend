@@ -1,6 +1,7 @@
 import TotalContainer from "@/components/TotalContainer";
 import Navigation from "@/components/nav";
 import SusList from "@/components/suslist";
+import SusLis2t from "@/components/suslist/index copy";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -34,18 +35,33 @@ export default function Dashboard() {
         })
     },[])
 
-    return (
-        <>
-            <Major>
-                <NameContainer>
-                    {name}
-                </NameContainer>
-                <SusList data={SrData}/>
-                <TotalContainer num={SrData.length}/>
-            </Major>
-            <Navigation/>
-        </>
-    )
+    if(router.pathname === '/[id]/people'){
+        return(
+            <>
+                <Major>
+                    <NameContainer>
+                        {name}
+                    </NameContainer>
+                    <SusLis2t data={SrData}/>
+                </Major>
+                <Navigation/>
+            </>
+        )
+    }
+    else{
+        return (
+            <>
+                <Major>
+                    <NameContainer>
+                        {name}
+                    </NameContainer>
+                    <SusList data={SrData}/>
+                    <TotalContainer num={SrData.length}/>
+                </Major>
+                <Navigation/>
+            </>
+        )
+    }
 }
 
 const Major = styled.div`
