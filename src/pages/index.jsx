@@ -22,7 +22,7 @@ export default function Home(){
                 router.push(ind)
             })
             .catch((err)=>{
-                alert(err.response.status)
+                alert(err.response.statusText)
             })
         }
     }
