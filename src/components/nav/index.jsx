@@ -12,13 +12,10 @@ export default function Navigation(){
     return(
         <MainContainer>
             <NavButton onClick={()=> moveDir('/')}>
-                <Home selected={router.pathname === '/'}/>
+                <Home selected={router.pathname === '/[id]'}/>
             </NavButton>
             <NavButton onClick={()=> moveDir('/dir')}>
-                <People selected={router.pathname === '/people'}/>
-            </NavButton>
-            <NavButton onClick={()=> moveDir('/location')}>
-                <Location selected={router.pathname === '/locaion'}/>
+                <People selected={router.pathname === '/[id]/people'}/>
             </NavButton>
         </MainContainer>
     )
