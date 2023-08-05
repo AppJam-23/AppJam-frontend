@@ -21,11 +21,10 @@ export default function Create(){
                 }
             })
             .then((res)=>{
-                console.log(res)
+                router.push('/'+ code)
             })
             .catch((err)=>{
-                console.error(err.response)
-                // alert(err.response.status)
+                alert(err.response.status)
             })
         }
     }
