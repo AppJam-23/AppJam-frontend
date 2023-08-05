@@ -18,7 +18,7 @@ export default function SusLis2t({data}){
                 </div>
             </SusHeader>
             <Box>
-                {data.map((d)=>{
+                {data.sort((a,b)=> {return b.Temperature-a.Temperature}).map((d)=>{
                     return <PeopleList data={d} key={d.id}/>
                 })}
             </Box>
