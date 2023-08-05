@@ -31,11 +31,6 @@ const SusHeader = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 4px;
-
-    &>a{
-        cursor: pointer;
-        text-decoration: underline;
-    }
     &>div{
         display: inherit;
         align-items: inherit;

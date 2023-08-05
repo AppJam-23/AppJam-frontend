@@ -3,6 +3,8 @@ import { styled } from "styled-components";
 export const ButtonUB = styled.a`
     color: #71727B;
     font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
 `
 
 export const ButtonLW = styled.button`
