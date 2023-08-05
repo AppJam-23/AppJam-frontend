@@ -1,13 +1,13 @@
 import { styled } from "styled-components"
 
-export default function Input({onChange, value, label}){
+export default function Input({onChange, value, label, placeholder}){
     return(
         <InputCon>
             <Lab htmlFor={label}>
                 <img src="/rar.png"/>
                 {label}
             </Lab>
-            <Inp id={label} value={value} onChange={onChange}/>
+            <Inp id={label} value={value} onChange={onChange} placeholder={placeholder}/>
         </InputCon>
     )
 }
