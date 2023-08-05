@@ -1,17 +1,20 @@
 import { styled } from "styled-components"
 import { Home, Location, People } from "../navIcon"
+import { useRouter } from "next/router"
 
 export default function Navigation(){
+    const router = useRouter();
+
     return(
         <MainContainer>
             <NavButton>
-                <Home/>
+                <Home selected={router.pathname === '/'}/>
             </NavButton>
             <NavButton>
-                <People/>
+                <People selected={router.pathname === '/people'}/>
             </NavButton>
             <NavButton>
-                <Location/>
+                <Location selected={router.pathname === '/locaion'}/>
             </NavButton>
         </MainContainer>
     )
