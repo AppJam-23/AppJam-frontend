@@ -8,6 +8,7 @@ import { styled } from "styled-components";
 
 export default function Dashboard() {
     const [SrData, setSrData] = useState([]);
+    const [name,setName] = useState('이것은 이벤트 이름의 예입니다.');
     const router = useRouter();
 
     useEffect(()=>{
@@ -26,7 +27,7 @@ export default function Dashboard() {
             }
         })
         .then((res)=>{
-            console.log(res)
+            setName(res.data)
         })
         .catch((error)=>{
             console.error(error.response)
@@ -37,7 +38,7 @@ export default function Dashboard() {
         <>
             <Major>
                 <NameContainer>
-                    탬버린
+                    {name}
                 </NameContainer>
                 <SusList data={SrData}/>
                 <TotalContainer num={SrData.length}/>
