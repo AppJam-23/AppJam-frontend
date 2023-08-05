@@ -19,7 +19,7 @@ export default function SusList({data}){
             </SusHeader>
             <Box>
                 {data.map((d)=>{
-                    return <PersonStat name={d.Name} temp={d.Temperature} key={d.id}/>
+                    return <PersonStat data={d} key={d.id}/>
                 })}
             </Box>
         </div>

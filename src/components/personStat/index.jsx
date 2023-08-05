@@ -1,11 +1,15 @@
 import { styled } from "styled-components"
 
-export default function PersonStat({name,temp}){
+export default function PersonStat({data}){
+    function cpt(){
+
+    }
+
     return(
         <MainContainer>
-            <DOT color={temp<=37.5 ? 'green' : temp>=38 ? 'red' : 'orange'}/>
-            <p style={{fontWeight:800}}>{name}</p>
-            <p style={{fontSize:'16px', opacity:0.5, fontWeight:600}}>{temp}°C</p>
+            <DOT color={data.Temperature<=37.5 ? 'green' : data.Temperature>=38 ? 'red' : 'orange'}/>
+            <p style={{fontWeight:800}}>{data.Name}</p>
+            <p style={{fontSize:'16px', opacity:0.5, fontWeight:600}}>{data.Temperature}°C</p>
         </MainContainer>
     )
 }
@@ -38,7 +42,7 @@ function DOT({color}){
     }
     else{
         return(
-            <div style={{backgroundColor:'red', width:'12px', height:'12px', borderRadius:'230984232px'}}/>
+            <div style={{backgroundColor:'purple', width:'12px', height:'12px', borderRadius:'230984232px'}}/>
         )
     }
 }
