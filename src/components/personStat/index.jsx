@@ -7,7 +7,7 @@ export default function PersonStat({data}){
 
     return(
         <MainContainer>
-            <DOT color={data.Temperature<=37.5 ? 'green' : data.Temperature>=38 ? 'red' : 'orange'}/>
+            <DOT color={data.Temperature<37.5 ? 'green' : data.Temperature>38 ? 'red' : 'orange'}/>
             <p style={{fontWeight:800}}>{data.Name}</p>
             <p style={{fontSize:'16px', opacity:0.5, fontWeight:600}}>{data.Temperature}°C</p>
         </MainContainer>
