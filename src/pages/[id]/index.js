@@ -63,7 +63,10 @@ export default function Dashboard() {
                     </NameContainer>
                     <SusList data={SrData}/>
                     <TotalContainer num={SrData.length}/>
-                    <ButtonLW onClick={rtcms}>코드 보기</ButtonLW>
+                    <div style={{display:'flex', gap:'8px'}}>
+                        <ButtonLW onClick={rtcms}>코드 보기</ButtonLW>
+                        <ButtonLW onClick={()=> router.push('/')}>나가기</ButtonLW>
+                    </div>
                 </Major>
                 <Navigation/>
             </>
