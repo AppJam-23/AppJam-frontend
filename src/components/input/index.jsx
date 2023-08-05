@@ -16,6 +16,7 @@ const InputCon = styled.div`
     display: flex;
     gap: 8px;
     flex-direction: column;
+    width: 100%;
 `
 
 const Lab = styled.label`
