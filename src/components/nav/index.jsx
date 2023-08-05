@@ -11,10 +11,10 @@ export default function Navigation(){
 
     return(
         <MainContainer>
-            <NavButton onClick={()=> moveDir('/')}>
+            <NavButton onClick={()=> moveDir('/' + router.query.id)}>
                 <Home selected={router.pathname === '/[id]'}/>
             </NavButton>
-            <NavButton onClick={()=> moveDir('/dir')}>
+            <NavButton onClick={()=> moveDir('/' + router.query.id + '/people')}>
                 <People selected={router.pathname === '/[id]/people'}/>
             </NavButton>
         </MainContainer>
