@@ -15,7 +15,7 @@ export default function SusList({data}){
                         온열 질환 의심
                     </p>
                 </div>
-                <ButtonUB onClick={()=> router.push('/people')}>전체 보기</ButtonUB>
+                <ButtonUB onClick={()=> router.push('/'+router.query.id+'/people')}>전체 보기</ButtonUB>
             </SusHeader>
             <Box>
                 {data.map((d)=>{
