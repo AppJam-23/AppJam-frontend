@@ -16,4 +16,5 @@ export const ButtonLW = styled.button`
     font-weight: 400;
     border: 0;
     border-radius: 1242px;
+    cursor: pointer;
 `
